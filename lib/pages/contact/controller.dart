@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:sglab_desk/common/apis/apis.dart';
 import 'package:sglab_desk/common/entities/entities.dart';
+import 'package:sglab_desk/common/routes/routes.dart';
 import 'package:sglab_desk/common/store/store.dart';
 import 'package:sglab_desk/pages/contact/state.dart';
 
@@ -43,7 +44,8 @@ class ContactController extends GetxController {
 
     if (fromMessages.docs.isEmpty && toMessages.docs.isEmpty) {
       var profile = UserStore.to.profile;
-      Msg msg = Msg(
+
+      Msg msgData = Msg(
         from_avatar: profile.avatar,
         from_name: profile.name,
         from_user_id: profile.id,
@@ -56,6 +58,39 @@ class ContactController extends GetxController {
         last_time: Timestamp.now(),
         msg_num: 0,
       );
+
+      var doc = await db
+          .collection("message")
+          .withConverter(
+              fromFirestore: Msg.fromFirestore,
+              toFirestore: (Msg msg, options) => msg.toFirestore())
+          .add(msgData);
+
+      Get.toNamed(AppRoutes.Chat, parameters: {
+        "doc_id": doc.id,
+        "to_token": item.contactUserId ?? "",
+        "to_name": item.name ?? "",
+        "to_avatar": item.avatar ?? "",
+        "to_online": item.online.toString(),
+      });
+    } else {
+      if (fromMessages.docs.first.id.isNotEmpty) {
+        Get.toNamed(AppRoutes.Chat, parameters: {
+          "doc_id": fromMessages.docs.first.id,
+          "to_token": item.contactUserId ?? "",
+          "to_name": item.name ?? "",
+          "to_avatar": item.avatar ?? "",
+          "to_online": item.online.toString(),
+        });
+      } else if (toMessages.docs.first.id.isNotEmpty) {
+        Get.toNamed(AppRoutes.Chat, parameters: {
+          "doc_id": toMessages.docs.first.id,
+          "to_token": item.contactUserId ?? "",
+          "to_name": item.name ?? "",
+          "to_avatar": item.avatar ?? "",
+          "to_online": item.online.toString(),
+        });
+      }
     }
   }
 

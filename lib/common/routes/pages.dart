@@ -8,6 +8,7 @@ import 'package:sglab_desk/pages/frame/sign_in/index.dart';
 import 'package:sglab_desk/pages/message/index.dart';
 import 'package:sglab_desk/pages/profile/index.dart';
 import 'package:sglab_desk/pages/contact/index.dart';
+import 'package:sglab_desk/pages/chat/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -46,9 +47,10 @@ class AppPages {
     // GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
     // // 首页
     GetPage(
-        name: AppRoutes.Contact,
-        page: () => ContactPage(),
-        binding: ContactBinding()),
+      name: AppRoutes.Contact,
+      page: () => ContactPage(),
+      binding: ContactBinding(),
+    ),
     //message page
     GetPage(
       name: AppRoutes.Message,
@@ -60,11 +62,14 @@ class AppPages {
     ),
     //Profile Section
     GetPage(
-        name: AppRoutes.Profile,
-        page: () => ProfilePage(),
-        binding: ProfileBinding()),
-    // //聊天详情
-    // GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
+      name: AppRoutes.Profile,
+      page: () => ProfilePage(),
+      binding: ProfileBinding(),
+    ),
+
+    // Chat Page
+    GetPage(
+        name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
     //
     // GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),
     // GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallViewPage(), binding: VoiceCallViewBinding()),

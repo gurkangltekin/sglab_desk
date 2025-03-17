@@ -56,7 +56,7 @@ class Msg {
   Map<String, dynamic> toFirestore() {
     return {
       if (from_user_id != null) "from_user_id": from_user_id,
-      if (to_user_id != null) "to_token": to_user_id,
+      if (to_user_id != null) "to_user_id": to_user_id,
       if (from_name != null) "from_name": from_name,
       if (to_name != null) "to_name": to_name,
       if (from_avatar != null) "from_avatar": from_avatar,
