@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "566987714576",
+    "project_id": "sglab-desk",
+    "storage_bucket": "sglab-desk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566987714576:android:07d9865e67f8f133ba1a95",
+        "android_client_info": {
+          "package_name": "com.sglab.sglab_desk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566987714576-bv41iva2uftt19kg70v7nmvgf9492slj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sglab.sglab_desk",
+            "certificate_hash": "b9cd9f26d440f8086dd23220753f7334e40a6572"
+          }
+        },
+        {
+          "client_id": "566987714576-0t3i69f683drk27bv6cbm79pgkfeq6en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnlYAOnh8gMFCvbA8xqaKOTAUbbJfBk7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566987714576-0t3i69f683drk27bv6cbm79pgkfeq6en.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "566987714576-7ec0it64n6hb2vjhdbg0lmu01gg64tm3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sglabDesk"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
