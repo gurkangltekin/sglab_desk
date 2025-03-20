@@ -9,6 +9,7 @@ import 'package:sglab_desk/pages/message/index.dart';
 import 'package:sglab_desk/pages/profile/index.dart';
 import 'package:sglab_desk/pages/contact/index.dart';
 import 'package:sglab_desk/pages/chat/index.dart';
+import 'package:sglab_desk/pages/voicecall/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -72,7 +73,11 @@ class AppPages {
         name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
     //
     // GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),
-    // GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallViewPage(), binding: VoiceCallViewBinding()),
+    GetPage(
+      name: AppRoutes.VoiceCall,
+      page: () => VoiceCallPage(),
+      binding: VoiceCallBinding(),
+    ),
     // GetPage(name: AppRoutes.VideoCall, page: () => VideoCallPage(), binding: VideoCallBinding()),
   ];
 }
